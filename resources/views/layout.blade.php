@@ -14,6 +14,7 @@
     <a class="my-navbar-brand" href="/">ToDo App</a>
     <div class="my-navbar-control">
       @if(Auth::check())
+      <!-- ログインしていた場合 -->
         <span class="my-navbar-item">ようこそ, {{ Auth::user()->name }}さん</span>
         ｜
         <a href="#" id="logout" class="my-navbar-item">ログアウト</a>
@@ -21,6 +22,7 @@
           @csrf
         </form>
       @else
+      <!-- ログインしていない場合 -->
         <a class="my-navbar-item" href="{{ route('login') }}">ログイン</a>
         ｜
         <a class="my-navbar-item" href="{{ route('register') }}">会員登録</a>

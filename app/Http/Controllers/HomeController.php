@@ -21,12 +21,6 @@ class HomeController extends Controller
         }
 
         // フォルダがあればそのフォルダのタスク一覧にリダイレクトする
-        return redirect()->route('tasks.index', [
-            'id' => $folder->id,
-        ]);
+        return redirect()->route('tasks.index', $folder->id);
     }
-    // public function index()
-    // {
-    //     return view('home');
-    // }
 }
